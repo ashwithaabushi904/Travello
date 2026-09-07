@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travello - Explore the World</title>
+
 <style>
     :root {
     --primary-color: #ffcc00;
@@ -366,7 +367,6 @@ button.submit:hover {
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
 
-    /* Mobile First: Adjustments for smaller screens */
     .navbar {
         justify-content: space-between;
         padding: 15px 5vw;
@@ -431,7 +431,6 @@ button.submit:hover {
 
 @media (min-width: 769px) and (max-width: 991px) {
 
-    /* Tablet View */
     #destinations .grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -439,7 +438,6 @@ button.submit:hover {
 
 @media (min-width: 992px) {
 
-    /* Desktop View */
     #destinations .grid {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -458,6 +456,7 @@ button.submit:hover {
     <div class="navbar">
         <div class="logo">Travello</div>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
+
         <div class="navbar-links" id="navLinks">
             <a href="#home">Home</a>
             <a href="#destinations">Destinations</a>
@@ -470,6 +469,7 @@ button.submit:hover {
         <h1>Travello - Explore the World with Us</h1>
         <h2>Discover your next adventure</h2>
         <p>"Unforgettable journeys, breathtaking destinations and memories that last a lifetime"</p>
+
         <div class="buttons">
             <a href="#destinations"><button>🔍 Explore Destinations</button></a>
             <a href="#plan"><button>🧳 Plan Your Trip</button></a>
@@ -478,223 +478,401 @@ button.submit:hover {
     </section>
 
     <section id="destinations">
+
         <h1>🌍 Explore Destinations</h1>
 
         <h2>☔ Rainy Season Places</h2>
+
         <div class="grid">
-            <div class="card"><img src="https://i.ytimg.com/vi/d1p_ju6g0Ys/maxresdefault.jpg" alt="Cherrapunji">
+
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/d1p_ju6g0Ys/maxresdefault.jpg" alt="Cherrapunji">
                 <h3>Cherrapunji</h3>
             </div>
-            <div class="card"><img src="https://www.thegoavilla.com/static/pub/image/CID_0538_540e2897a539b33077f2dad6a65623de.jpg" alt="Goa">
+
+            <div class="card">
+                <img src="https://www.thegoavilla.com/static/pub/image/CID_0538_540e2897a539b33077f2dad6a65623de.jpg" alt="Goa">
                 <h3>Goa</h3>
             </div>
-            <div class="card"><img src="https://tse3.mm.bing.net/th/id/OIP.-IRJw92Cr2W52W7vKwpyfwHaEO?pid=Api&P=0&h=220" alt="Munnar">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1491497895121-1334fc14d8c9?auto=format&fit=crop&w=1200&q=80" alt="Munnar">
                 <h3>Munnar</h3>
             </div>
-            <div class="card"><img src="https://static.wixstatic.com/media/b4110a_ea4bea85d57a4ab4a419dc3472352f1b~mv2.jpg/v1/fill/w_1000,h_583,al_c,q_85,usm_0.66_1.00_0.01/b4110a_ea4bea85d57a4ab4a419dc3472352f1b~mv2.jpg" alt="Lonavala">
+
+            <div class="card">
+                <img src="https://static.wixstatic.com/media/b4110a_ea4bea85d57a4ab4a419dc3472352f1b~mv2.jpg/v1/fill/w_1000,h_583,al_c,q_85,usm_0.66_1.00_0.01/b4110a_ea4bea85d57a4ab4a419dc3472352f1b~mv2.jpg" alt="Lonavala">
                 <h3>Lonavala</h3>
             </div>
+
         </div>
 
         <h2 class="padding">🌞 Summer Season Places</h2>
+
         <div class="grid">
-            <div class="card"><img src="https://www.oyorooms.com/travel-guide/wp-content/uploads/2021/05/Darjeeling-for-a-Summer-Holiday-3.jpg" alt="Darjeeling">
+
+            <div class="card">
+                <img src="https://www.oyorooms.com/travel-guide/wp-content/uploads/2021/05/Darjeeling-for-a-Summer-Holiday-3.jpg" alt="Darjeeling">
                 <h3>Darjeeling</h3>
             </div>
-             <div class="card">
-    <img src="https://tse1.mm.bing.net/th/id/OIP.3ipQMRwNrjptG-7F78hEBwHaCe?pid=Api&P=0&h=220">
-     <h3>Ooty</h3>
-</div>
 
-                        <div class="card"><img src="https://tse2.mm.bing.net/th/id/OIP.Ro-D_D8TohMwMvpuazwTswHaE7?pid=Api&P=0&h=220" alt="Ladakh">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1638886540342-240980f60d25?auto=format&fit=crop&w=1200&q=80" alt="Ooty">
+                <h3>Ooty</h3>
+            </div>
+
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.Ro-D_D8TohMwMvpuazwTswHaE7?pid=Api&P=0&h=220" alt="Ladakh">
                 <h3>Ladakh</h3>
             </div>
-            <div class="card"><img src="https://www.tourmyindia.com/blog/wp-content/uploads/2023/02/Gurudongmar-Lake-Sikkim.jpg" alt="Sikkim">
+
+            <div class="card">
+                <img src="https://www.tourmyindia.com/blog/wp-content/uploads/2023/02/Gurudongmar-Lake-Sikkim.jpg" alt="Sikkim">
                 <h3>Sikkim</h3>
             </div>
+
         </div>
 
         <h2 class="padding">❄ Winter Season Places</h2>
+
         <div class="grid">
-            <div class="card"><img src="https://tse3.mm.bing.net/th/id/OIP.ZoRVx1JmKVXC2WgXkJentQHaE8?pid=Api&P=0&h=220" alt="Manali">
+
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.ZoRVx1JmKVXC2WgXkJentQHaE8?pid=Api&P=0&h=220" alt="Manali">
                 <h3>Manali</h3>
             </div>
-            <div class="card"><img src="https://tse4.mm.bing.net/th/id/OIP.IE6HgAncuca3qxZJH44jxgHaEz?pid=Api&P=0&h=220">
+
+            <div class="card">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.IE6HgAncuca3qxZJH44jxgHaEz?pid=Api&P=0&h=220" alt="Gulmarg">
                 <h3>Gulmarg</h3>
             </div>
-            <div class="card"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Shimla">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Shimla">
                 <h3>Shimla</h3>
             </div>
-            <div class="card"><img src="https://mysterioustrip.com/wp-content/uploads/2023/06/Snow-Activities-in-Auli.webp" alt="Auli">
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Auli%2C_India.jpg" alt="Auli">
                 <h3>Auli</h3>
             </div>
+
         </div>
 
         <h2 class="padding">🙏 Devotional Trip Places</h2>
+
         <div class="grid">
-            <div class="card"><img src="https://www.orissapost.com/wp-content/uploads/2019/04/TIRUPATI.jpg" alt="Tirupati">
+
+            <div class="card">
+                <img src="https://www.orissapost.com/wp-content/uploads/2019/04/TIRUPATI.jpg" alt="Tirupati">
                 <h3>Tirupati</h3>
             </div>
-            <div class="card"><img src="https://tse1.mm.bing.net/th/id/OIP.usQ_9HSQu4uyyGFSZ8L9HgHaEI?pid=Api&P=0&h=220" alt="Vaishno Devi">
+
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.usQ_9HSQu4uyyGFSZ8L9HgHaEI?pid=Api&P=0&h=220" alt="Vaishno Devi">
                 <h3>Vaishno Devi</h3>
             </div>
-            <div class="card"><img src="https://www.fabhotels.com/blog/wp-content/uploads/2024/01/d8288a7e-kashi-vishwanath-temple-min.jpg" alt="Kashi Vishwanath">
+
+            <div class="card">
+                <img src="https://www.fabhotels.com/blog/wp-content/uploads/2024/01/d8288a7e-kashi-vishwanath-temple-min.jpg" alt="Kashi Vishwanath">
                 <h3>Kashi Vishwanath</h3>
             </div>
-            <div class="card"><img src="https://www.indovacations.net/hotels/images/Dwarka.jpg" alt="Dwarka">
+
+            <div class="card">
+                <img src="https://www.indovacations.net/hotels/images/Dwarka.jpg" alt="Dwarka">
                 <h3>Dwarka</h3>
             </div>
+
         </div>
 
         <h2 class="padding">🕉 Char Dham Yatra Places</h2>
+
         <div class="grid">
-            <div class="card"><img src="https://assets.telegraphindia.com/telegraph/4e63e66e-5925-413b-9149-6064729f84bf.jpg" alt="Kedarnath 2">
+
+            <div class="card">
+                <img src="https://assets.telegraphindia.com/telegraph/4e63e66e-5925-413b-9149-6064729f84bf.jpg" alt="Kedarnath">
                 <h3>Kedarnath</h3>
             </div>
-            <div class="card"><img src="https://kedarnathtemple.com/wp-content/uploads/2021/08/badrinath-temple-in-may.jpg" alt="Badrinath">
+
+            <div class="card">
+                <img src="https://kedarnathtemple.com/wp-content/uploads/2021/08/badrinath-temple-in-may.jpg" alt="Badrinath">
                 <h3>Badrinath</h3>
             </div>
-            <div class="card"><img src="https://media.tripinvites.com/places/uttarakhand/gangotri/the-famous-gangotri-temple-featured.jpg" alt="Gangotri">
+
+            <div class="card">
+                <img src="https://media.tripinvites.com/places/uttarakhand/gangotri/the-famous-gangotri-temple-featured.jpg" alt="Gangotri">
                 <h3>Gangotri</h3>
             </div>
-            <div class="card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Yamunotri">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Yamunotri">
                 <h3>Yamunotri</h3>
             </div>
+
         </div>
 
         <h2 class="padding">🏔 Special Hill Trip Places</h2>
+
         <div class="grid">
-            <div class="card"><img src="https://curlytales.com/wp-content/uploads/2023/02/Untitled-design-2023-02-17T004418.678.jpg" alt="Nainital">
+
+            <div class="card">
+                <img src="https://curlytales.com/wp-content/uploads/2023/02/Untitled-design-2023-02-17T004418.678.jpg" alt="Nainital">
                 <h3>Nainital</h3>
             </div>
-            <div class="card"><img src="https://static.india.com/wp-content/uploads/2023/04/MOUNT-ABU.jpg" alt="Mount Abu">
+
+            <div class="card">
+                <img src="https://static.india.com/wp-content/uploads/2023/04/MOUNT-ABU.jpg" alt="Mount Abu">
                 <h3>Mount Abu</h3>
             </div>
-            <div class="card"><img src="https://www.inditales.com/wp-content/uploads/2023/09/araku-view-point-clouds-passing.jpg" alt="Nainital">
+
+            <div class="card">
+                <img src="https://www.inditales.com/wp-content/uploads/2023/09/araku-view-point-clouds-passing.jpg" alt="Araku">
                 <h3>Araku</h3>
             </div>
-            <div class="card"><img src="https://cdn.siasat.com/wp-content/uploads/2024/07/Ananthagiri-2.jpg" alt="Mount Abu">
+
+            <div class="card">
+                <img src="https://cdn.siasat.com/wp-content/uploads/2024/07/Ananthagiri-2.jpg" alt="Ananthagiri Hills">
                 <h3>Ananthagiri Hills</h3>
             </div>
+
         </div>
+
     </section>
 
     <section id="plan">
+
         <h1>🧳 Plan Your Trip</h1>
 
         <div class="package bg-summer">
             <div class="overlay"></div>
+
             <div class="content">
                 <h3>☔ Rainy Season Package — ₹25,000</h3>
                 <p>Destinations: Cherrapunji, Goa, Munnar, Lonavala</p>
+
                 <ul>
-                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
-                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                    <li>
+                        <a href="https://www.zomato.com" target="_blank">
+                            Nearby Restaurants
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.tripadvisor.com" target="_blank">
+                            Children Play Area
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
 
         <div class="package bg-summer">
             <div class="overlay"></div>
+
             <div class="content">
                 <h3>☀ Summer Season Package — ₹30,000</h3>
                 <p>Destinations: Darjeeling, Ooty, Ladakh, Sikkim</p>
+
                 <ul>
-                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
-                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                    <li>
+                        <a href="https://www.zomato.com" target="_blank">
+                            Nearby Restaurants
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.tripadvisor.com" target="_blank">
+                            Children Play Area
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
 
         <div class="package bg-summer">
             <div class="overlay"></div>
+
             <div class="content">
                 <h3>❄ Winter Season Package — ₹27,000</h3>
                 <p>Destinations: Manali, Gulmarg, Shimla, Auli</p>
+
                 <ul>
-                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
-                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                    <li>
+                        <a href="https://www.zomato.com" target="_blank">
+                            Nearby Restaurants
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.tripadvisor.com" target="_blank">
+                            Children Play Area
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
 
         <div class="package bg-summer">
             <div class="overlay"></div>
+
             <div class="content">
                 <h3>🙏 Devotional Trip Package — ₹35,000</h3>
                 <p>Destinations: Tirupati, Vaishno Devi, Kashi Vishwanath, Dwarka</p>
+
                 <ul>
-                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
-                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                    <li>
+                        <a href="https://www.zomato.com" target="_blank">
+                            Nearby Restaurants
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.tripadvisor.com" target="_blank">
+                            Children Play Area
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
 
         <div class="package bg-summer">
             <div class="overlay"></div>
+
             <div class="content">
                 <h3>🕉 Char Dham Yatra Package — ₹50,000</h3>
                 <p>Destinations: Kedarnath, Badrinath, Gangotri, Yamunotri</p>
+
                 <ul>
-                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
-                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                    <li>
+                        <a href="https://www.zomato.com" target="_blank">
+                            Nearby Restaurants
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.tripadvisor.com" target="_blank">
+                            Children Play Area
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
 
         <div class="package bg-summer">
             <div class="overlay"></div>
+
             <div class="content">
                 <h3>🏔 Special Hill Trip Package — ₹40,000</h3>
                 <p>Destinations: Nainital, Mount Abu, Coorg</p>
+
                 <ul>
-                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
-                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                    <li>
+                        <a href="https://www.zomato.com" target="_blank">
+                            Nearby Restaurants
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.tripadvisor.com" target="_blank">
+                            Children Play Area
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
+
     </section>
 
     <footer id="contact">
+
         <h1>📞 Contact Us</h1>
+
         <div id="formBox">
+
             <form onsubmit="showThankYou(); return false;">
+
                 <input type="text" placeholder="Your Name" required />
+
                 <input type="email" placeholder="Your Email" required />
+
                 <input type="tel" placeholder="Phone Number" required />
+
                 <select required>
+
                     <option value="">Select Package</option>
-                    <option value="rainy">Rainy Season</option>
-                    <option value="summer">Summer Season</option>
-                    <option value="winter">Winter Season</option>
-                    <option value="devotional">Devotional Trip</option>
-                    <option value="chardham">Char Dham Yatra</option>
-                    <option value="hill">Special Hill Trip</option>
+
+                    <option value="rainy">
+                        Rainy Season
+                    </option>
+
+                    <option value="summer">
+                        Summer Season
+                    </option>
+
+                    <option value="winter">
+                        Winter Season
+                    </option>
+
+                    <option value="devotional">
+                        Devotional Trip
+                    </option>
+
+                    <option value="chardham">
+                        Char Dham Yatra
+                    </option>
+
+                    <option value="hill">
+                        Special Hill Trip
+                    </option>
+
                 </select>
+
                 <textarea rows="5" placeholder="Your Message"></textarea>
-                <button class="submit" type="submit">Send Message</button>
+
+                <button class="submit" type="submit">
+                    Send Message
+                </button>
+
             </form>
+
         </div>
 
         <div class="thankyou" id="thankyou">
+
             <h2>🎉 Thank You!</h2>
-            <p>Your message has been successfully sent. We’ll get back to you shortly.</p>
+
+            <p>
+                Your message has been successfully sent.
+                We’ll get back to you shortly.
+            </p>
+
         </div>
+
     </footer>
 
     <script>
+
         function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
+
+            const navLinks =
+                document.getElementById('navLinks');
+
             navLinks.classList.toggle('active');
+
         }
 
         function showThankYou() {
-            document.getElementById('formBox').style.display = 'none';
-            document.getElementById('thankyou').style.display = 'block';
+
+            document.getElementById('formBox')
+                .style.display = 'none';
+
+            document.getElementById('thankyou')
+                .style.display = 'block';
+
         }
+
     </script>
 
 </body>
 
 </html>
-
