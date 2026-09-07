@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travello - Explore the World</title>
+<style>
+    :root {
+    --primary-color: #ffcc00;
+    --secondary-color: #333;
+    --background-dark: rgba(0, 0, 0, 0.6);
+    --background-light: #ffffff;
+    --text-light: white;
+    --text-dark: #333;
+    --card-background: #f0f0f0;
+    --button-hover: #ffd633;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.padding {
+    padding-top: 30px;
+}
+
+.explore-heading {}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Shared section styling */
+section {
+    min-height: 100vh;
+    padding: 80px 5vw;
+    text-align: center;
+    color: var(--text-light);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--background-dark);
+    padding: 15px 5vw;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-links a {
+    color: var(--text-light);
+    font-family: Roboto;
+    font-size: 18px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 1;
+}
+
+/* Home Section */
+#home {
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/026/901/755/small/ai-generated-ai-generative-mist-magic-fog-night-dark-forest-tree-jungle-landscape-background-scary-nature-outdoor-adventure-explore-travel-vibe-style-graphic-art-photo.jpg");
+    padding-top: 150px;
+}
+
+#home h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--text-light);
+}
+
+#home h2 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-top: 10px;
+    color: var(--text-light);
+}
+
+#home p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    margin: 20px 0;
+    max-width: 800px;
+    color: var(--text-light);
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-image: linear-gradient(#d0b200, #a58d00);
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.buttons button:hover {
+    transform: scale(1.05);
+    background: var(--button-hover);
+}
+
+/* Destinations Section */
+#destinations {
+    background: var(--background-light);
+    padding-top: 100px;
+    color: var(--text-dark);
+}
+
+#destinations h1,
+#destinations h2 {
+    color: var(--text-dark);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#destinations .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card {
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin-top: 15px;
+    color: var(--primary-color);
+}
+
+/* Plan Trip Section */
+#plan {
+    background: var(--background-light);
+    padding-top: 100px;
+    color: var(--text-dark);
+    background-attachment: scroll;
+}
+
+#plan h1 {
+    color: var(--text-dark);
+}
+
+.package {
+    position: relative;
+    margin: 25px auto;
+    border-radius: 16px;
+    max-width: 980px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.package:hover {
+    transform: translateY(-5px);
+}
+
+.package .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .65));
+}
+
+.package .content {
+    position: relative;
+    padding: 25px;
+    z-index: 1;
+    backdrop-filter: blur(2px);
+}
+
+.package h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+}
+
+.package p,
+.package ul {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.package ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
+.package ul li:before {
+    content: "✔";
+    margin-right: 8px;
+}
+
+/* Individual backgrounds */
+.bg-rainy {
+    background-image: url('https://images.unsplash.com/photo-1528821154947-1aa3d1e00480?q=80&w=1600&auto=format&fit=crop');
+}
+
+.bg-summer {
+    background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop');
+}
+
+.bg-winter {
+    background-image: url('https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee?q=80&w=1600&auto=format&fit=crop');
+}
+
+.bg-devote {
+    background-image: url('https://images.unsplash.com/photo-1603399430027-48a3a0e327c1?q=80&w=1600&auto=format&fit=crop');
+}
+
+.bg-chardham {
+    background-image: url('https://images.unsplash.com/photo-1628584950540-0c7d4a79e927?q=80&w=1600&auto=format&fit=crop');
+}
+
+.bg-hill {
+    background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop');
+}
+
+/* Footer and Contact Form */
+footer {
+    background: var(--background-light);
+    color: var(--text-dark);
+    text-align: center;
+    padding: 80px 5vw;
+    background-attachment: scroll;
+}
+
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: auto;
+    color: var(--text-dark);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+button.submit {
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    background-image: linear-gradient(#d0b200, #a58d00);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+button.submit:hover {
+    background: var(--button-hover);
+}
+
+/* Thank You message */
+.thankyou {
+    display: none;
+    font-size: 1.25rem;
+    margin-top: 20px;
+    color: var(--text-dark);
+}
+
+.thankyou h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+
+    /* Mobile First: Adjustments for smaller screens */
+    .navbar {
+        justify-content: space-between;
+        padding: 15px 5vw;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.85);
+        padding: 15px;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links a {
+        margin: 4px;
+    }
+
+    .hamburger {
+        display: block;
+        color: white;
+    }
+
+    section {
+        padding: 60px 5vw;
+        min-height: auto;
+    }
+
+    #home h1 {
+        font-size: 2.2rem;
+    }
+
+    #home h2 {
+        font-size: 1.4rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons button {
+        width: 250px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+
+    /* Tablet View */
+    #destinations .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Desktop View */
+    #destinations .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #home h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">Travello</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="navbar-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#plan">Plan Trip</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <section id="home">
+        <h1>Travello - Explore the World with Us</h1>
+        <h2>Discover your next adventure</h2>
+        <p>"Unforgettable journeys, breathtaking destinations and memories that last a lifetime"</p>
+        <div class="buttons">
+            <a href="#destinations"><button>🔍 Explore Destinations</button></a>
+            <a href="#plan"><button>🧳 Plan Your Trip</button></a>
+            <a href="#contact"><button>📞 Contact</button></a>
+        </div>
+    </section>
+
+    <section id="destinations">
+        <h1>🌍 Explore Destinations</h1>
+
+        <h2>☔ Rainy Season Places</h2>
+        <div class="grid">
+            <div class="card"><img src="https://i.ytimg.com/vi/d1p_ju6g0Ys/maxresdefault.jpg" alt="Cherrapunji">
+                <h3>Cherrapunji</h3>
+            </div>
+            <div class="card"><img src="https://www.thegoavilla.com/static/pub/image/CID_0538_540e2897a539b33077f2dad6a65623de.jpg" alt="Goa">
+                <h3>Goa</h3>
+            </div>
+            <div class="card"><img src="https://tse3.mm.bing.net/th/id/OIP.-IRJw92Cr2W52W7vKwpyfwHaEO?pid=Api&P=0&h=220" alt="Munnar">
+                <h3>Munnar</h3>
+            </div>
+            <div class="card"><img src="https://static.wixstatic.com/media/b4110a_ea4bea85d57a4ab4a419dc3472352f1b~mv2.jpg/v1/fill/w_1000,h_583,al_c,q_85,usm_0.66_1.00_0.01/b4110a_ea4bea85d57a4ab4a419dc3472352f1b~mv2.jpg" alt="Lonavala">
+                <h3>Lonavala</h3>
+            </div>
+        </div>
+
+        <h2 class="padding">🌞 Summer Season Places</h2>
+        <div class="grid">
+            <div class="card"><img src="https://www.oyorooms.com/travel-guide/wp-content/uploads/2021/05/Darjeeling-for-a-Summer-Holiday-3.jpg" alt="Darjeeling">
+                <h3>Darjeeling</h3>
+            </div>
+             <div class="card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.3ipQMRwNrjptG-7F78hEBwHaCe?pid=Api&P=0&h=220">
+     <h3>Ooty</h3>
+</div>
+
+                        <div class="card"><img src="https://tse2.mm.bing.net/th/id/OIP.Ro-D_D8TohMwMvpuazwTswHaE7?pid=Api&P=0&h=220" alt="Ladakh">
+                <h3>Ladakh</h3>
+            </div>
+            <div class="card"><img src="https://www.tourmyindia.com/blog/wp-content/uploads/2023/02/Gurudongmar-Lake-Sikkim.jpg" alt="Sikkim">
+                <h3>Sikkim</h3>
+            </div>
+        </div>
+
+        <h2 class="padding">❄ Winter Season Places</h2>
+        <div class="grid">
+            <div class="card"><img src="https://tse3.mm.bing.net/th/id/OIP.ZoRVx1JmKVXC2WgXkJentQHaE8?pid=Api&P=0&h=220" alt="Manali">
+                <h3>Manali</h3>
+            </div>
+            <div class="card"><img src="https://tse4.mm.bing.net/th/id/OIP.IE6HgAncuca3qxZJH44jxgHaEz?pid=Api&P=0&h=220">
+                <h3>Gulmarg</h3>
+            </div>
+            <div class="card"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Shimla">
+                <h3>Shimla</h3>
+            </div>
+            <div class="card"><img src="https://mysterioustrip.com/wp-content/uploads/2023/06/Snow-Activities-in-Auli.webp" alt="Auli">
+                <h3>Auli</h3>
+            </div>
+        </div>
+
+        <h2 class="padding">🙏 Devotional Trip Places</h2>
+        <div class="grid">
+            <div class="card"><img src="https://www.orissapost.com/wp-content/uploads/2019/04/TIRUPATI.jpg" alt="Tirupati">
+                <h3>Tirupati</h3>
+            </div>
+            <div class="card"><img src="https://tse1.mm.bing.net/th/id/OIP.usQ_9HSQu4uyyGFSZ8L9HgHaEI?pid=Api&P=0&h=220" alt="Vaishno Devi">
+                <h3>Vaishno Devi</h3>
+            </div>
+            <div class="card"><img src="https://www.fabhotels.com/blog/wp-content/uploads/2024/01/d8288a7e-kashi-vishwanath-temple-min.jpg" alt="Kashi Vishwanath">
+                <h3>Kashi Vishwanath</h3>
+            </div>
+            <div class="card"><img src="https://www.indovacations.net/hotels/images/Dwarka.jpg" alt="Dwarka">
+                <h3>Dwarka</h3>
+            </div>
+        </div>
+
+        <h2 class="padding">🕉 Char Dham Yatra Places</h2>
+        <div class="grid">
+            <div class="card"><img src="https://assets.telegraphindia.com/telegraph/4e63e66e-5925-413b-9149-6064729f84bf.jpg" alt="Kedarnath 2">
+                <h3>Kedarnath</h3>
+            </div>
+            <div class="card"><img src="https://kedarnathtemple.com/wp-content/uploads/2021/08/badrinath-temple-in-may.jpg" alt="Badrinath">
+                <h3>Badrinath</h3>
+            </div>
+            <div class="card"><img src="https://media.tripinvites.com/places/uttarakhand/gangotri/the-famous-gangotri-temple-featured.jpg" alt="Gangotri">
+                <h3>Gangotri</h3>
+            </div>
+            <div class="card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Yamunotri">
+                <h3>Yamunotri</h3>
+            </div>
+        </div>
+
+        <h2 class="padding">🏔 Special Hill Trip Places</h2>
+        <div class="grid">
+            <div class="card"><img src="https://curlytales.com/wp-content/uploads/2023/02/Untitled-design-2023-02-17T004418.678.jpg" alt="Nainital">
+                <h3>Nainital</h3>
+            </div>
+            <div class="card"><img src="https://static.india.com/wp-content/uploads/2023/04/MOUNT-ABU.jpg" alt="Mount Abu">
+                <h3>Mount Abu</h3>
+            </div>
+            <div class="card"><img src="https://www.inditales.com/wp-content/uploads/2023/09/araku-view-point-clouds-passing.jpg" alt="Nainital">
+                <h3>Araku</h3>
+            </div>
+            <div class="card"><img src="https://cdn.siasat.com/wp-content/uploads/2024/07/Ananthagiri-2.jpg" alt="Mount Abu">
+                <h3>Ananthagiri Hills</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="plan">
+        <h1>🧳 Plan Your Trip</h1>
+
+        <div class="package bg-summer">
+            <div class="overlay"></div>
+            <div class="content">
+                <h3>☔ Rainy Season Package — ₹25,000</h3>
+                <p>Destinations: Cherrapunji, Goa, Munnar, Lonavala</p>
+                <ul>
+                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
+                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="package bg-summer">
+            <div class="overlay"></div>
+            <div class="content">
+                <h3>☀ Summer Season Package — ₹30,000</h3>
+                <p>Destinations: Darjeeling, Ooty, Ladakh, Sikkim</p>
+                <ul>
+                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
+                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="package bg-summer">
+            <div class="overlay"></div>
+            <div class="content">
+                <h3>❄ Winter Season Package — ₹27,000</h3>
+                <p>Destinations: Manali, Gulmarg, Shimla, Auli</p>
+                <ul>
+                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
+                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="package bg-summer">
+            <div class="overlay"></div>
+            <div class="content">
+                <h3>🙏 Devotional Trip Package — ₹35,000</h3>
+                <p>Destinations: Tirupati, Vaishno Devi, Kashi Vishwanath, Dwarka</p>
+                <ul>
+                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
+                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="package bg-summer">
+            <div class="overlay"></div>
+            <div class="content">
+                <h3>🕉 Char Dham Yatra Package — ₹50,000</h3>
+                <p>Destinations: Kedarnath, Badrinath, Gangotri, Yamunotri</p>
+                <ul>
+                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
+                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="package bg-summer">
+            <div class="overlay"></div>
+            <div class="content">
+                <h3>🏔 Special Hill Trip Package — ₹40,000</h3>
+                <p>Destinations: Nainital, Mount Abu, Coorg</p>
+                <ul>
+                    <li><a href="https://www.zomato.com" target="_blank">Nearby Restaurants</a></li>
+                    <li><a href="https://www.tripadvisor.com" target="_blank">Children Play Area</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h1>📞 Contact Us</h1>
+        <div id="formBox">
+            <form onsubmit="showThankYou(); return false;">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <input type="tel" placeholder="Phone Number" required />
+                <select required>
+                    <option value="">Select Package</option>
+                    <option value="rainy">Rainy Season</option>
+                    <option value="summer">Summer Season</option>
+                    <option value="winter">Winter Season</option>
+                    <option value="devotional">Devotional Trip</option>
+                    <option value="chardham">Char Dham Yatra</option>
+                    <option value="hill">Special Hill Trip</option>
+                </select>
+                <textarea rows="5" placeholder="Your Message"></textarea>
+                <button class="submit" type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="thankyou" id="thankyou">
+            <h2>🎉 Thank You!</h2>
+            <p>Your message has been successfully sent. We’ll get back to you shortly.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function showThankYou() {
+            document.getElementById('formBox').style.display = 'none';
+            document.getElementById('thankyou').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>
+
